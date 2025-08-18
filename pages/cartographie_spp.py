@@ -18,18 +18,22 @@ st.set_page_config(page_title="Analyse SPP + Carte UT/CIS", layout="wide")
 def read_csv_smart(path, prefer_sep=None, prefer_encoding="utf-8-sig"):
     if not os.path.exists(path):
         raise FileNotFoundError(f"Fichier introuvable: {path}")
-    seps = (
-        [prefer_sep] + [",", ";", "\t", "|", None]
-        if prefer_sep
-        else [",", ";", "\t", "|", None]
-    )
+
+    # ordre d’essai: on met le séparateur préféré en tête
+    seps = []
+    if prefer_sep is not None:
+        seps.append(prefer_sep)
+    seps += [",", ";", "\t", "|", None]
+
     encs = [prefer_encoding, "utf-8", "cp1252", "latin1"]
     last_err = None
     for enc in encs:
         for sep in seps:
             try:
                 df = pd.read_csv(path, sep=sep, encoding=enc, engine="python")
-                # drop éventuel index sauvé
+                # si une seule colonne ET qu’elle contient des ';', on relit en forçant ';'
+                if df.shape[1] == 1 and any(";" in c for c in df.columns):
+                    df = pd.read_csv(path, sep=";", encoding=enc, engine="python")
                 if "Unnamed: 0" in df.columns:
                     df = df.drop(columns=["Unnamed: 0"])
                 return df
