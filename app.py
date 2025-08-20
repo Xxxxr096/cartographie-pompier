@@ -5,7 +5,7 @@ st.markdown(
     """
 Ceci est la page d’accueil.
 
-Utilisez le menu à gauche pour naviguer entre les pages :
+Utilisez le menu à gauche pour naviguer entre les pages suivante:
 - Cartographie spp
 - Cartographie spv
 """
