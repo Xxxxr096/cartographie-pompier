@@ -607,7 +607,7 @@ else:
                     markeredgewidth=1.2,
                 )
                 if show_labels:
-                    label = f"{r['ut_norm']}\n{int(r['effectif'])} pers"
+                    label = f"{r['ut_norm']}"
                     if show_imc and pd.notna(r["imc_moyen"]):
                         label += f"\nIMC {r['imc_moyen']:.1f}"
                     ax.text(
@@ -642,8 +642,9 @@ else:
                     markeredgecolor="white",
                     markeredgewidth=1.2,
                 )
+                # {int(r['effectif'])} pers
                 if show_labels:
-                    label = f"{r['cis_norm']}\n{int(r['effectif'])} pers"
+                    label = f"{r['cis_norm']}"
                     if show_imc and pd.notna(r["imc_moyen"]):
                         label += f"\nIMC {r['imc_moyen']:.1f}"
                     ax.text(
