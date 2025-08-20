@@ -465,7 +465,9 @@ IMAGE_PATH = os.path.abspath(
     os.path.join(os.path.dirname(__file__), "..", "carte_j.jpeg")
 )
 UT_REF_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "ut.csv"))
-CIS_REF_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "cis.csv"))
+CIS_REF_PATH = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), "..", "cis_m.csv")
+)
 
 
 # Petites utilitaires locales (indépendantes du reste du script)
