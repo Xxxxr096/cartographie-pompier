@@ -466,7 +466,7 @@ IMAGE_PATH = os.path.abspath(
 )
 UT_REF_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "ut.csv"))
 CIS_REF_PATH = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), "..", "cis_m.csv")
+    os.path.join(os.path.dirname(__file__), "..", "cis_last.csv")
 )
 
 

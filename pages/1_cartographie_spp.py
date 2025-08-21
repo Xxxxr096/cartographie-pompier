@@ -454,7 +454,7 @@ UT_REF_PATH = os.path.abspath(
     os.path.join(os.path.dirname(__file__), "..", "ut_spp_c.csv")
 )
 CIS_REF_PATH = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), "..", "cis_m.csv")
+    os.path.join(os.path.dirname(__file__), "..", "cis_last.csv")
 )
 
 # ✅ normalisation déjà définie: normalize_key
