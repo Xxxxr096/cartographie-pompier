@@ -453,7 +453,9 @@ IMAGE_PATH = os.path.abspath(
 UT_REF_PATH = os.path.abspath(
     os.path.join(os.path.dirname(__file__), "..", "ut_spp_c.csv")
 )
-CIS_REF_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "cis.csv"))
+CIS_REF_PATH = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), "..", "cis_m.csv")
+)
 
 # ✅ normalisation déjà définie: normalize_key
 
